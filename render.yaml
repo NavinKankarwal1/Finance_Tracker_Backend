@@ -1,8 +1,9 @@
 services:
   - type: web
     name: finance-tracker-backend
-    runtime: native
     buildCommand: ./mvnw clean install
     startCommand: java -jar target/finance-tracker-0.0.1-SNAPSHOT.jar
     plan: free
-    autoDeploy: true
+    envVars:
+      - key: JAVA_VERSION
+        value: 17
